@@ -1,0 +1,2180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BD_PGP_WEB_DESENVModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Aniversarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CPF" Type="varchar" MaxLength="14" Nullable="false" />
+          <Property Name="Agencia" Type="int" Nullable="false" />
+          <Property Name="Conta" Type="int" Nullable="false" />
+          <Property Name="DataNascimento" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="AplicacaoResgate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="agencia" Type="int" Nullable="false" />
+          <Property Name="conta" Type="int" Nullable="false" />
+          <Property Name="data" Type="date" Nullable="false" />
+          <Property Name="hora" Type="time" Precision="7" Nullable="false" />
+          <Property Name="operacao" Type="varchar" MaxLength="45" />
+          <Property Name="perif" Type="varchar" MaxLength="45" />
+          <Property Name="produto" Type="varchar" MaxLength="45" />
+          <Property Name="terminal" Type="varchar" MaxLength="45" />
+          <Property Name="valor" Type="decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="gerente" Type="varchar" MaxLength="50" />
+          <Property Name="advisor" Type="varchar" MaxLength="45" />
+          <Property Name="segmento" Type="varchar" MaxLength="45" />
+          <Property Name="enviado" Type="bit" />
+          <Property Name="MatriculaConsultor" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Notificado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CaminhoDinheiro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MesDataBase" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Ag_Conta" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Agencia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Segmento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Produto" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="VL_APLIC" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="VL_RESG" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PERC_DINHEIRO_NOVO" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PERC_CDB" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PERC_ISENTOS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PERC_COMPROMISSADAS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PERC_LF" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PERC_FUNDOS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PERC_CORRET" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PERC_PREVI" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PERC_MSM_TIT_ENV_TOTAL" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PERC_DIF_TIT_ENV_TOTAL" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="PERC_OUTROS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="MatriculaConsultor" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="Consultor" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MatriculaCordenador" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="Cordenador" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CaptacaoLiquida">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Agencia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Conta" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Ag_Conta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodAgencia" Type="varchar" MaxLength="100" />
+          <Property Name="MesDataBase" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Diretoria" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="TipoPessoa" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="GerenciaRegional" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MatriculaCordenador" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="CordenadorPGP" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="MatriculaConsultor" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="Consultor" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DataBase" Type="datetime" />
+          <Property Name="Produto" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ValorAplicacao" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ValorResgate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ValorNET" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CaptacaoLiquidaResumo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MatriculaConsultor" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="ProdutoMacro" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="VL_NET" Type="decimal" Precision="18" Scale="5" Nullable="false" />
+          <Property Name="MatriculaCordenador" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Clusterizacoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CONTA" Type="int" Nullable="false" />
+          <Property Name="AGENCIA" Type="int" Nullable="false" />
+          <Property Name="CPF_CNPJ" Type="varchar" MaxLength="50" />
+          <Property Name="PERFIL_API" Type="varchar" MaxLength="50" />
+          <Property Name="MES_VCTO_API" Type="varchar" MaxLength="50" />
+          <Property Name="NIVEL_DESENQ_FX_RISCO" Type="varchar" MaxLength="50" />
+          <Property Name="SALDO_TOTAL_M3" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_TOTAL" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_CORRETORA_BRA" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_CORRETORA_AGORA" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_CORRETORA" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_PREVIDENCIA" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_POUPANCA" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_INVESTS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_DAV_20K" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_COMPROMISSADAS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_ISENTOS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_LF" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_CDB" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="SALDO_FUNDOS" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="COD_GER_RELC" Type="varchar" MaxLength="10" />
+          <Property Name="GER_RELC" Type="varchar" MaxLength="100" />
+          <Property Name="Situacao" Type="varchar" MaxLength="50" />
+          <Property Name="Segmento" Type="varchar" MaxLength="50" />
+          <Property Name="DiretoriaRegional" Type="varchar" MaxLength="50" />
+          <Property Name="CodDiretoriaRegional" Type="varchar" MaxLength="50" />
+          <Property Name="AREA" Type="nvarchar" MaxLength="50" />
+          <Property Name="ACAO" Type="nvarchar" MaxLength="100" />
+          <Property Name="ACAO_PRINCIPAL" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Cockpit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodFuncionalGerente" Type="int" Nullable="false" />
+          <Property Name="NomeGerente" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CPF" Type="varchar" MaxLength="14" />
+          <Property Name="NomeCliente" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="CodigoAgencia" Type="int" Nullable="false" />
+          <Property Name="NomeAgencia" Type="varchar" MaxLength="100" />
+          <Property Name="Conta" Type="int" Nullable="false" />
+          <Property Name="DataEncarteiramento" Type="date" />
+          <Property Name="DataContato" Type="datetime" Nullable="false" />
+          <Property Name="DataRetorno" Type="datetime" />
+          <Property Name="Observacao" Type="varchar" MaxLength="8000" />
+          <Property Name="ContatoTeveExito" Type="bit" Nullable="false" />
+          <Property Name="DataHoraEdicaoContato" Type="datetime" />
+          <Property Name="MeioContato" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ClienteNaoLocalizado" Type="bit" Nullable="false" />
+          <Property Name="TipoTransacao" Type="varchar" MaxLength="100" />
+          <Property Name="Finalizado" Type="bit" />
+          <Property Name="GerenteRegistrouContato" Type="int" />
+          <Property Name="MatriculaConsultor" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Corretora">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Agencia" Type="varchar" MaxLength="20" />
+          <Property Name="Conta" Type="varchar" MaxLength="20" />
+          <Property Name="CPF" Type="varchar" MaxLength="14" />
+          <Property Name="Status" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Encarteiramento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TIP_CLIENTE" Type="varchar" MaxLength="50" />
+          <Property Name="CPF" Type="varchar" MaxLength="14" />
+          <Property Name="DATA" Type="datetime2" Precision="7" />
+          <Property Name="Agencia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Conta" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="AG_PRINC" Type="varchar" MaxLength="50" />
+          <Property Name="CONTA_PRINC" Type="varchar" MaxLength="50" />
+          <Property Name="CONSULTOR" Type="varchar" MaxLength="100" />
+          <Property Name="Matricula" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="EQUIPE_RESPONSAVEL" Type="varchar" MaxLength="70" />
+          <Property Name="EQUIPE_MESA" Type="varchar" MaxLength="70" />
+          <Property Name="DIR_REG_AG_PRINC" Type="varchar" MaxLength="100" />
+          <Property Name="GER_REG_AG_PRINC" Type="varchar" MaxLength="100" />
+          <Property Name="COD_REG" Type="int" />
+          <Property Name="COD_DIR" Type="int" />
+          <Property Name="AREA" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Evento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nome" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="DataHoraInicio" Type="datetime" Nullable="false" />
+          <Property Name="DataFim" Type="datetime" Nullable="false" />
+          <Property Name="MatriculaConsultor" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Finalizado" Type="bit" Nullable="false" />
+          <Property Name="Notificado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Investfacil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AGENCIA" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Vlr_Evento" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="CONTA" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="SEGMENTO_CLIENTE" Type="varchar" MaxLength="150" />
+          <Property Name="NUM_CONTRATO" Type="varchar" MaxLength="100" />
+          <Property Name="MES_DT_BASE" Type="varchar" MaxLength="100" />
+          <Property Name="DT_EMISSAO" Type="datetime" />
+          <Property Name="PRAZO_PERMAN" Type="int" />
+          <Property Name="FX_PERMANENCIA" Type="varchar" MaxLength="100" />
+          <Property Name="FX_VOLUME" Type="varchar" MaxLength="100" />
+          <Property Name="SEGM_AGRUPADO" Type="varchar" MaxLength="100" />
+          <Property Name="SEGMENTO_MACRO" Type="varchar" MaxLength="100" />
+          <Property Name="MatriculaConsultor" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="NomeConsultor" Type="varchar" MaxLength="100" />
+          <Property Name="MatriculaCordenador" Type="char" MaxLength="7" Nullable="false" />
+          <Property Name="NomeCordenador" Type="varchar" MaxLength="100" />
+          <Property Name="Plataforma" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="InvestFacilResumo">
+          <Key>
+            <PropertyRef Name="Matricula" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Matricula" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MatriculaCordenador" Type="varchar" MaxLength="7" Nullable="false" />
+          <Property Name="Vlr_Evento" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Titulo" Type="varchar" MaxLength="50" />
+          <Property Name="Url" Type="varchar" MaxLength="200" />
+          <Property Name="Exibir" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Thread" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Level" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Logger" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Message" Type="varchar" MaxLength="4000" Nullable="false" />
+          <Property Name="Exception" Type="varchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="Motivo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Evento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="EmUso" Type="bit" />
+        </EntityType>
+        <EntityType Name="Origem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Evento" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="PerfilId" />
+          </Key>
+          <Property Name="PerfilId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pipeline">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomeCliente" Type="varchar" MaxLength="50" />
+          <Property Name="Agencia" Type="int" Nullable="false" />
+          <Property Name="Consultor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Conta" Type="int" Nullable="false" />
+          <Property Name="BradescoPrincipalBanco" Type="bit" Nullable="false" />
+          <Property Name="ValoresNoMercado" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ValorDoPipe" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="OrigemId" Type="int" />
+          <Property Name="DataPrevista" Type="datetime" Nullable="false" />
+          <Property Name="DataDaConversao" Type="datetime" />
+          <Property Name="DataProrrogada" Type="datetime" />
+          <Property Name="MotivoId" Type="int" />
+          <Property Name="StatusId" Type="int" Nullable="false" />
+          <Property Name="Observacoes" Type="varchar" MaxLength="1000" />
+          <Property Name="ValorAplicado" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MatriculaConsultor" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Notificado" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Qualitativo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NomeConsultor" Type="varchar" MaxLength="100" />
+          <Property Name="OBJETIVOTOTAL" Type="int" Nullable="false" />
+          <Property Name="DENTRODACARTEIRA" Type="int" Nullable="false" />
+          <Property Name="FORADACARTEIRA" Type="int" Nullable="false" />
+          <Property Name="TOTALCONTATOS" Type="int" Nullable="false" />
+          <Property Name="PORCENTAGEMATINGIMENTO" Type="nvarchar(max)" />
+          <Property Name="GIRODECARTEIRAOBJETIVO" Type="int" Nullable="false" />
+          <Property Name="GIRODECARTEIRAOREALIZADO" Type="int" Nullable="false" />
+          <Property Name="PORCENTAGEMATINGIMENTOGIRO" Type="nvarchar(max)" />
+          <Property Name="REVISAOFINANCEIRAOBJETIVO" Type="nvarchar(max)" />
+          <Property Name="REVISAOFINANCEIRAREALIZADO" Type="int" Nullable="false" />
+          <Property Name="PORCENTAGEMATINGIMENTOREVISAO" Type="varchar" MaxLength="50" />
+          <Property Name="CADASTROAPIOBJETIVO" Type="nvarchar(max)" />
+          <Property Name="CADASTROAPIREALIZADO" Type="float" Nullable="false" />
+          <Property Name="PORCENTAGEMATINGIMENTOCADASTROAPI" Type="varchar" MaxLength="50" />
+          <Property Name="MatriculaConsultor" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Solicitacao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Segmento" Type="varchar" MaxLength="50" />
+          <Property Name="Lideranca" Type="varchar" MaxLength="50" />
+          <Property Name="ConsultorMatriz" Type="varchar" MaxLength="50" />
+          <Property Name="ConsultorPGP" Type="varchar" MaxLength="50" />
+          <Property Name="NomeParticipante" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CPF" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="SaldoPrevidencia" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ValorPrevistoSaida" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="NomeEntidade" Type="varchar" MaxLength="60" Nullable="false" />
+          <Property Name="DataInicioProcesso" Type="datetime" Nullable="false" />
+          <Property Name="PrazoAtendimento" Type="datetime" />
+          <Property Name="DataRef" Type="datetime" />
+          <Property Name="CodIdentificadorProcesso" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CodIdentificadorProposta" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SUSEPCedente" Type="varchar" MaxLength="50" />
+          <Property Name="SUSEPCessionaria" Type="varchar" MaxLength="50" />
+          <Property Name="CIDTFDCNPJCedente" Type="varchar" MaxLength="50" />
+          <Property Name="CIDTFDCNPJCessionaria" Type="varchar" MaxLength="50" />
+          <Property Name="StatusId" Type="int" Nullable="false" />
+          <Property Name="MotivoId" Type="int" />
+          <Property Name="SubMotivoId" Type="int" />
+          <Property Name="MatriculaConsultor" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="ValorRetido" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Observacao" Type="varchar" MaxLength="1000" />
+          <Property Name="Agencia" Type="int" />
+          <Property Name="Conta" Type="int" />
+          <Property Name="DataConclusao" Type="datetime" />
+          <Property Name="DataInclusao" Type="datetime" />
+          <Property Name="SubStatusId" Type="int" />
+          <Property Name="PrazoFinal" Type="datetime" />
+          <Property Name="ContatoAgencia" Type="varchar" MaxLength="50" />
+          <Property Name="DescricaoTipoSolicitacao" Type="varchar" MaxLength="100" />
+          <Property Name="CodigoIdentificadorAgenciaBRA" Type="int" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Evento" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TED">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Data" Type="datetime" Nullable="false" />
+          <Property Name="Agencia" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Conta" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NomeCliente" Type="varchar" MaxLength="100" />
+          <Property Name="MatriculaConsultor" Type="varchar" MaxLength="30" />
+          <Property Name="NomeConsultor" Type="varchar" MaxLength="50" />
+          <Property Name="MatriculaSupervisor" Type="varchar" MaxLength="10" />
+          <Property Name="NomeSupervisor" Type="varchar" MaxLength="50" />
+          <Property Name="Area" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Valor" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ValorAplicado" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="MotivoId" Type="int" />
+          <Property Name="StatusId" Type="int" Nullable="false" />
+          <Property Name="Notificado" Type="bit" Nullable="false" />
+          <Property Name="MotivoTedId" Type="int" />
+          <Property Name="OutrasInstId" Type="int" />
+          <Property Name="Observacao" Type="varchar" MaxLength="1000" />
+          <Property Name="CpfCnpj" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TEDFaixaEquipe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Equipe" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="De" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Ate" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TedsAplicacoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdTed" Type="int" Nullable="false" />
+          <Property Name="IdProduto" Type="int" Nullable="false" />
+          <Property Name="ValorAplicado" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TedsContatos">
+          <Key>
+            <PropertyRef Name="IdTed" />
+          </Key>
+          <Property Name="IdTed" Type="int" Nullable="false" />
+          <Property Name="ContatouCliente" Type="bit" />
+          <Property Name="ContatouGerente" Type="bit" />
+          <Property Name="GerenteSolicitouNaoAtuacao" Type="bit" />
+          <Property Name="GerenteInvestimentoAtuou" Type="bit" />
+          <Property Name="EspecialistaAtuou" Type="bit" />
+          <Property Name="ClienteLocalizado" Type="bit" />
+          <Property Name="ClienteAceitaConsultoria" Type="bit" />
+        </EntityType>
+        <EntityType Name="TedsMotivoOutrasInst">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Motivo" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TedsMotivos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Motivo" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TedsProdutos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Produto" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BD_PGP_WEB_DESENV.dbo.TemInvestFacil' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TemInvestFacil">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Agencia" />
+            <PropertyRef Name="Conta" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="Agencia" Type="int" Nullable="false" />
+          <Property Name="Conta" Type="int" Nullable="false" />
+          <Property Name="DataInicio" Type="datetime" />
+          <Property Name="DataFim" Type="datetime" />
+          <Property Name="Status" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="Nome" Type="varchar" MaxLength="50" />
+          <Property Name="Matricula" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="NomeSupervisor" Type="varchar" MaxLength="50" />
+          <Property Name="MatriculaSupervisor" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="Equipe" Type="varchar" MaxLength="100" />
+          <Property Name="PerfilId" Type="int" Nullable="false" />
+          <Property Name="NomeUsuario" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="UsuarioId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NotificacaoEvento" Type="bit" Nullable="false" />
+          <Property Name="NotificacaoPipeline" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vencimento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cod_Agencia" Type="int" Nullable="false" />
+          <Property Name="Cod_Conta_Corrente" Type="int" Nullable="false" />
+          <Property Name="Dt_Vecto_Contratado" Type="datetime" Nullable="false" />
+          <Property Name="Nm_Cliente_Contraparte" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Perc_Indexador" Type="float" Nullable="false" />
+          <Property Name="Nome_produto_sistema_origem" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SALDO_ATUAL" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="StatusId" Type="int" />
+        </EntityType>
+        <EntityType Name="WindowsServiceConfig">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tarefa" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CaminhoOrigem" Type="varchar" MaxLength="200" />
+          <Property Name="UltimaExecucao" Type="datetime" Nullable="false" />
+          <Property Name="IntervaloExecucao" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DataUltimaModificacao" Type="datetime" />
+          <Property Name="PadraoPesquisa" Type="varchar" MaxLength="50" />
+          <Property Name="Acrescentar" Type="bit" />
+          <Property Name="UltimoArquivo" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="EmExecucao" Type="bit" Nullable="false" />
+          <Property Name="NomeArquivo" Type="varchar" MaxLength="100" />
+          <Property Name="TeveFalha" Type="bit" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'BD_PGP_WEB_DESENV.dbo.vw_NomeCliente' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="vw_NomeCliente">
+          <Key>
+            <PropertyRef Name="Agencia" />
+            <PropertyRef Name="Conta" />
+            <PropertyRef Name="NomeCliente" />
+          </Key>
+          <Property Name="Agencia" Type="int" Nullable="false" />
+          <Property Name="Conta" Type="int" Nullable="false" />
+          <Property Name="NomeCliente" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__TED__MotivoTedId__6166761E">
+          <End Role="TedsMotivos" Type="Self.TedsMotivos" Multiplicity="0..1" />
+          <End Role="TED" Type="Self.TED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TedsMotivos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TED">
+              <PropertyRef Name="MotivoTedId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TED__OutrasInstI__634EBE90">
+          <End Role="TedsMotivoOutrasInst" Type="Self.TedsMotivoOutrasInst" Multiplicity="0..1" />
+          <End Role="TED" Type="Self.TED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TedsMotivoOutrasInst">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TED">
+              <PropertyRef Name="OutrasInstId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__PerfilI__619B8048">
+          <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="PerfilId" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="PerfilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pipeline_Motivo">
+          <End Role="Motivo" Type="Self.Motivo" Multiplicity="0..1" />
+          <End Role="Pipeline" Type="Self.Pipeline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motivo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pipeline">
+              <PropertyRef Name="MotivoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pipeline_Origem">
+          <End Role="Origem" Type="Self.Origem" Multiplicity="0..1" />
+          <End Role="Pipeline" Type="Self.Pipeline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Origem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pipeline">
+              <PropertyRef Name="OrigemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pipeline_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Pipeline" Type="Self.Pipeline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pipeline">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Solicitacao_Motivo">
+          <End Role="Motivo" Type="Self.Motivo" Multiplicity="0..1" />
+          <End Role="Solicitacao" Type="Self.Solicitacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motivo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Solicitacao">
+              <PropertyRef Name="MotivoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Solicitacao_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Solicitacao" Type="Self.Solicitacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Solicitacao">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TbTedsAplicacoes_TbTedsProdutos">
+          <End Role="TedsProdutos" Type="Self.TedsProdutos" Multiplicity="1" />
+          <End Role="TedsAplicacoes" Type="Self.TedsAplicacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TedsProdutos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TedsAplicacoes">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TED_MotivosTeds">
+          <End Role="Motivo" Type="Self.Motivo" Multiplicity="0..1" />
+          <End Role="TED" Type="Self.TED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motivo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TED">
+              <PropertyRef Name="MotivoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TED_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="TED" Type="Self.TED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TED">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TedsAplicacoes_TED">
+          <End Role="TED" Type="Self.TED" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="TedsAplicacoes" Type="Self.TedsAplicacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TED">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TedsAplicacoes">
+              <PropertyRef Name="IdTed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TedsContatos_TbTED">
+          <End Role="TED" Type="Self.TED" Multiplicity="1" />
+          <End Role="TedsContatos" Type="Self.TedsContatos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TED">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TedsContatos">
+              <PropertyRef Name="IdTed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vencimento_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Vencimento" Type="Self.Vencimento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vencimento">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BD_PGP_WEB_DESENVModelStoreContainer">
+          <EntitySet Name="Aniversarios" EntityType="Self.Aniversarios" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AplicacaoResgate" EntityType="Self.AplicacaoResgate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CaminhoDinheiro" EntityType="Self.CaminhoDinheiro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CaptacaoLiquida" EntityType="Self.CaptacaoLiquida" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CaptacaoLiquidaResumo" EntityType="Self.CaptacaoLiquidaResumo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Clusterizacoes" EntityType="Self.Clusterizacoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cockpit" EntityType="Self.Cockpit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Corretora" EntityType="Self.Corretora" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Encarteiramento" EntityType="Self.Encarteiramento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Evento" EntityType="Self.Evento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Investfacil" EntityType="Self.Investfacil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvestFacilResumo" EntityType="Self.InvestFacilResumo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Links" EntityType="Self.Links" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Motivo" EntityType="Self.Motivo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Origem" EntityType="Self.Origem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Perfil" EntityType="Self.Perfil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pipeline" EntityType="Self.Pipeline" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Qualitativo" EntityType="Self.Qualitativo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Solicitacao" EntityType="Self.Solicitacao" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TED" EntityType="Self.TED" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TEDFaixaEquipe" EntityType="Self.TEDFaixaEquipe" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TedsAplicacoes" EntityType="Self.TedsAplicacoes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TedsContatos" EntityType="Self.TedsContatos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TedsMotivoOutrasInst" EntityType="Self.TedsMotivoOutrasInst" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TedsMotivos" EntityType="Self.TedsMotivos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TedsProdutos" EntityType="Self.TedsProdutos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vencimento" EntityType="Self.Vencimento" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WindowsServiceConfig" EntityType="Self.WindowsServiceConfig" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TemInvestFacil" EntityType="Self.TemInvestFacil" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TemInvestFacil].[id] AS [id], 
+    [TemInvestFacil].[Agencia] AS [Agencia], 
+    [TemInvestFacil].[Conta] AS [Conta], 
+    [TemInvestFacil].[DataInicio] AS [DataInicio], 
+    [TemInvestFacil].[DataFim] AS [DataFim], 
+    [TemInvestFacil].[Status] AS [Status]
+    FROM [dbo].[TemInvestFacil] AS [TemInvestFacil]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vw_NomeCliente" EntityType="Self.vw_NomeCliente" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [vw_NomeCliente].[Agencia] AS [Agencia], 
+    [vw_NomeCliente].[Conta] AS [Conta], 
+    [vw_NomeCliente].[NomeCliente] AS [NomeCliente]
+    FROM [dbo].[vw_NomeCliente] AS [vw_NomeCliente]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__TED__MotivoTedId__6166761E" Association="Self.FK__TED__MotivoTedId__6166761E">
+            <End Role="TedsMotivos" EntitySet="TedsMotivos" />
+            <End Role="TED" EntitySet="TED" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TED__OutrasInstI__634EBE90" Association="Self.FK__TED__OutrasInstI__634EBE90">
+            <End Role="TedsMotivoOutrasInst" EntitySet="TedsMotivoOutrasInst" />
+            <End Role="TED" EntitySet="TED" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__PerfilI__619B8048" Association="Self.FK__Usuario__PerfilI__619B8048">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pipeline_Motivo" Association="Self.FK_Pipeline_Motivo">
+            <End Role="Motivo" EntitySet="Motivo" />
+            <End Role="Pipeline" EntitySet="Pipeline" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pipeline_Origem" Association="Self.FK_Pipeline_Origem">
+            <End Role="Origem" EntitySet="Origem" />
+            <End Role="Pipeline" EntitySet="Pipeline" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pipeline_Status" Association="Self.FK_Pipeline_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Pipeline" EntitySet="Pipeline" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Solicitacao_Motivo" Association="Self.FK_Solicitacao_Motivo">
+            <End Role="Motivo" EntitySet="Motivo" />
+            <End Role="Solicitacao" EntitySet="Solicitacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Solicitacao_Status" Association="Self.FK_Solicitacao_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Solicitacao" EntitySet="Solicitacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TbTedsAplicacoes_TbTedsProdutos" Association="Self.FK_TbTedsAplicacoes_TbTedsProdutos">
+            <End Role="TedsProdutos" EntitySet="TedsProdutos" />
+            <End Role="TedsAplicacoes" EntitySet="TedsAplicacoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TED_MotivosTeds" Association="Self.FK_TED_MotivosTeds">
+            <End Role="Motivo" EntitySet="Motivo" />
+            <End Role="TED" EntitySet="TED" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TED_Status" Association="Self.FK_TED_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="TED" EntitySet="TED" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TedsAplicacoes_TED" Association="Self.FK_TedsAplicacoes_TED">
+            <End Role="TED" EntitySet="TED" />
+            <End Role="TedsAplicacoes" EntitySet="TedsAplicacoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TedsContatos_TbTED" Association="Self.FK_TedsContatos_TbTED">
+            <End Role="TED" EntitySet="TED" />
+            <End Role="TedsContatos" EntitySet="TedsContatos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vencimento_Status" Association="Self.FK_Vencimento_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Vencimento" EntitySet="Vencimento" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BD_PGP_WEB_DESENVModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Aniversarios">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CPF" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Agencia" Type="Int32" Nullable="false" />
+          <Property Name="Conta" Type="Int32" Nullable="false" />
+          <Property Name="DataNascimento" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="AplicacaoResgate">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="agencia" Type="Int32" Nullable="false" />
+          <Property Name="conta" Type="Int32" Nullable="false" />
+          <Property Name="data" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="hora" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="operacao" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="perif" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="produto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="terminal" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="valor" Type="Decimal" Precision="20" Scale="2" Nullable="false" />
+          <Property Name="gerente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="advisor" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="segmento" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+          <Property Name="enviado" Type="Boolean" />
+          <Property Name="MatriculaConsultor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Notificado" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CaptacaoLiquidaResumo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MatriculaConsultor" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ProdutoMacro" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="VL_NET" Type="Decimal" Precision="18" Scale="5" Nullable="false" />
+          <Property Name="MatriculaCordenador" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Cockpit">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodFuncionalGerente" Type="Int32" Nullable="false" />
+          <Property Name="NomeGerente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CPF" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="NomeCliente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CodigoAgencia" Type="Int32" Nullable="false" />
+          <Property Name="NomeAgencia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Conta" Type="Int32" Nullable="false" />
+          <Property Name="DataEncarteiramento" Type="DateTime" Precision="0" />
+          <Property Name="DataContato" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataRetorno" Type="DateTime" Precision="3" />
+          <Property Name="Observacao" Type="String" MaxLength="8000" FixedLength="false" Unicode="false" />
+          <Property Name="ContatoTeveExito" Type="Boolean" Nullable="false" />
+          <Property Name="DataHoraEdicaoContato" Type="DateTime" Precision="3" />
+          <Property Name="MeioContato" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ClienteNaoLocalizado" Type="Boolean" Nullable="false" />
+          <Property Name="TipoTransacao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Finalizado" Type="Boolean" />
+          <Property Name="GerenteRegistrouContato" Type="Int32" />
+          <Property Name="MatriculaConsultor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Corretora">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Agencia" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Conta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CPF" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Evento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Nome" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Descricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DataHoraInicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataFim" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MatriculaConsultor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Finalizado" Type="Boolean" Nullable="false" />
+          <Property Name="Notificado" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Links">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Titulo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Url" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Exibir" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Motivo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Evento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Pipeline" Relationship="Self.FK_Pipeline_Motivo" FromRole="Motivo" ToRole="Pipeline" />
+          <NavigationProperty Name="TED" Relationship="Self.FK_TED_Motivo" FromRole="Motivo" ToRole="TED" />
+          <Property Name="EmUso" Type="Boolean" />
+          <NavigationProperty Name="Solicitacao" Relationship="BD_PGP_WEB_DESENVModel.FK_Solicitacao_Motivo" FromRole="Motivo" ToRole="Solicitacao" />
+        </EntityType>
+        <EntityType Name="Origem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Evento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Pipeline" Relationship="Self.FK_Pipeline_Origem" FromRole="Origem" ToRole="Pipeline" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="PerfilId" />
+          </Key>
+          <Property Name="PerfilId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Usuario" Relationship="Self.FK__Usuario__PerfilI__619B8048" FromRole="Perfil" ToRole="Usuario" />
+        </EntityType>
+        <EntityType Name="Pipeline">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Agencia" Type="Int32" Nullable="false" />
+          <Property Name="Consultor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Conta" Type="Int32" Nullable="false" />
+          <Property Name="BradescoPrincipalBanco" Type="Boolean" Nullable="false" />
+          <Property Name="ValoresNoMercado" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ValorDoPipe" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="OrigemId" Type="Int32" />
+          <Property Name="DataPrevista" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataDaConversao" Type="DateTime" Precision="3" />
+          <Property Name="DataProrrogada" Type="DateTime" Precision="3" />
+          <Property Name="MotivoId" Type="Int32" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <Property Name="Observacoes" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="ValorAplicado" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MatriculaConsultor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Notificado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Motivo" Relationship="Self.FK_Pipeline_Motivo" FromRole="Pipeline" ToRole="Motivo" />
+          <NavigationProperty Name="Origem" Relationship="Self.FK_Pipeline_Origem" FromRole="Pipeline" ToRole="Origem" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Pipeline_Status" FromRole="Pipeline" ToRole="Status" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Evento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Pipeline" Relationship="Self.FK_Pipeline_Status" FromRole="Status" ToRole="Pipeline" />
+          <NavigationProperty Name="TED" Relationship="Self.FK_TED_Status" FromRole="Status" ToRole="TED" />
+          <NavigationProperty Name="Vencimento" Relationship="Self.FK_Vencimento_Status" FromRole="Status" ToRole="Vencimento" />
+          <NavigationProperty Name="Solicitacao" Relationship="BD_PGP_WEB_DESENVModel.FK_Solicitacao_Status" FromRole="Status" ToRole="Solicitacao" />
+        </EntityType>
+        <EntityType Name="TED">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Agencia" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Conta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomeCliente" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MatriculaConsultor" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NomeConsultor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MatriculaSupervisor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="NomeSupervisor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Area" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Valor" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ValorAplicado" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="MotivoId" Type="Int32" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <Property Name="Notificado" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Motivo" Relationship="Self.FK_TED_Motivo" FromRole="TED" ToRole="Motivo" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_TED_Status" FromRole="TED" ToRole="Status" />
+          <Property Name="MotivoTedId" Type="Int32" />
+          <Property Name="OutrasInstId" Type="Int32" />
+          <Property Name="Observacao" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TedsMotivos" Relationship="BD_PGP_WEB_DESENVModel.FK__TED__MotivoTedId__6166761E" FromRole="TED" ToRole="TedsMotivos" />
+          <NavigationProperty Name="TedsMotivoOutrasInst" Relationship="BD_PGP_WEB_DESENVModel.FK__TED__OutrasInstI__634EBE90" FromRole="TED" ToRole="TedsMotivoOutrasInst" />
+          <NavigationProperty Name="TedsAplicacoes" Relationship="BD_PGP_WEB_DESENVModel.FK_TedsAplicacoes_TED" FromRole="TED" ToRole="TedsAplicacoes" />
+          <NavigationProperty Name="TedsContatos" Relationship="BD_PGP_WEB_DESENVModel.FK_TedsContatos_TbTED" FromRole="TED" ToRole="TedsContatos" />
+          <Property Name="CpfCnpj" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="UsuarioId" />
+          </Key>
+          <Property Name="Nome" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Matricula" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NomeSupervisor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MatriculaSupervisor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Equipe" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="PerfilId" Type="Int32" Nullable="false" />
+          <Property Name="NomeUsuario" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UsuarioId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NotificacaoEvento" Type="Boolean" Nullable="false" />
+          <Property Name="NotificacaoPipeline" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Perfil" Relationship="Self.FK__Usuario__PerfilI__619B8048" FromRole="Usuario" ToRole="Perfil" />
+        </EntityType>
+        <EntityType Name="Vencimento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cod_Agencia" Type="Int32" Nullable="false" />
+          <Property Name="Cod_Conta_Corrente" Type="Int32" Nullable="false" />
+          <Property Name="Dt_Vecto_Contratado" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Nm_Cliente_Contraparte" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Perc_Indexador" Type="Double" Nullable="false" />
+          <Property Name="Nome_produto_sistema_origem" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="SALDO_ATUAL" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="StatusId" Type="Int32" />
+          <NavigationProperty Name="Status" Relationship="Self.FK_Vencimento_Status" FromRole="Vencimento" ToRole="Status" />
+        </EntityType>
+        <EntityType Name="WindowsServiceConfig">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tarefa" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CaminhoOrigem" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="UltimaExecucao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IntervaloExecucao" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DataUltimaModificacao" Type="DateTime" Precision="3" />
+          <Property Name="PadraoPesquisa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Acrescentar" Type="Boolean" />
+          <Property Name="UltimoArquivo" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="EmExecucao" Type="Boolean" Nullable="false" />
+          <Property Name="NomeArquivo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TeveFalha" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TemInvestFacil">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="Agencia" />
+            <PropertyRef Name="Conta" />
+            <PropertyRef Name="Status" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="Agencia" Type="Int32" Nullable="false" />
+          <Property Name="Conta" Type="Int32" Nullable="false" />
+          <Property Name="DataInicio" Type="DateTime" Precision="3" />
+          <Property Name="DataFim" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Pipeline_Motivo">
+          <End Role="Motivo" Type="Self.Motivo" Multiplicity="0..1" />
+          <End Role="Pipeline" Type="Self.Pipeline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motivo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pipeline">
+              <PropertyRef Name="MotivoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TED_Motivo">
+          <End Role="Motivo" Type="Self.Motivo" Multiplicity="0..1" />
+          <End Role="TED" Type="Self.TED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motivo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TED">
+              <PropertyRef Name="MotivoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pipeline_Origem">
+          <End Role="Origem" Type="Self.Origem" Multiplicity="0..1" />
+          <End Role="Pipeline" Type="Self.Pipeline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Origem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pipeline">
+              <PropertyRef Name="OrigemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Usuario__PerfilI__619B8048">
+          <End Role="Perfil" Type="Self.Perfil" Multiplicity="1" />
+          <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Perfil">
+              <PropertyRef Name="PerfilId" />
+            </Principal>
+            <Dependent Role="Usuario">
+              <PropertyRef Name="PerfilId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pipeline_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="Pipeline" Type="Self.Pipeline" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Pipeline">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TED_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="1" />
+          <End Role="TED" Type="Self.TED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TED">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vencimento_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Vencimento" Type="Self.Vencimento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Vencimento">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PGPEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Aniversarios" EntityType="Self.Aniversarios" />
+          <EntitySet Name="AplicacaoResgate" EntityType="Self.AplicacaoResgate" />
+          <EntitySet Name="CaptacaoLiquidaResumo" EntityType="Self.CaptacaoLiquidaResumo" />
+          <EntitySet Name="Cockpit" EntityType="Self.Cockpit" />
+          <EntitySet Name="Corretora" EntityType="Self.Corretora" />
+          <EntitySet Name="Evento" EntityType="Self.Evento" />
+          <EntitySet Name="Links" EntityType="Self.Links" />
+          <EntitySet Name="Motivo" EntityType="Self.Motivo" />
+          <EntitySet Name="Origem" EntityType="Self.Origem" />
+          <EntitySet Name="Perfil" EntityType="Self.Perfil" />
+          <EntitySet Name="Pipeline" EntityType="Self.Pipeline" />
+          <EntitySet Name="Status" EntityType="Self.Status" />
+          <EntitySet Name="TED" EntityType="Self.TED" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" />
+          <EntitySet Name="Vencimento" EntityType="Self.Vencimento" />
+          <EntitySet Name="WindowsServiceConfig" EntityType="Self.WindowsServiceConfig" />
+          <EntitySet Name="TemInvestFacil" EntityType="Self.TemInvestFacil" />
+          <AssociationSet Name="FK_Pipeline_Motivo" Association="Self.FK_Pipeline_Motivo">
+            <End Role="Motivo" EntitySet="Motivo" />
+            <End Role="Pipeline" EntitySet="Pipeline" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TED_Motivo" Association="Self.FK_TED_Motivo">
+            <End Role="Motivo" EntitySet="Motivo" />
+            <End Role="TED" EntitySet="TED" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pipeline_Origem" Association="Self.FK_Pipeline_Origem">
+            <End Role="Origem" EntitySet="Origem" />
+            <End Role="Pipeline" EntitySet="Pipeline" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Usuario__PerfilI__619B8048" Association="Self.FK__Usuario__PerfilI__619B8048">
+            <End Role="Perfil" EntitySet="Perfil" />
+            <End Role="Usuario" EntitySet="Usuario" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pipeline_Status" Association="Self.FK_Pipeline_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Pipeline" EntitySet="Pipeline" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TED_Status" Association="Self.FK_TED_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="TED" EntitySet="TED" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vencimento_Status" Association="Self.FK_Vencimento_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Vencimento" EntitySet="Vencimento" />
+          </AssociationSet>
+          <EntitySet Name="TEDFaixaEquipe" EntityType="BD_PGP_WEB_DESENVModel.TEDFaixaEquipe" />
+          <EntitySet Name="TedsAplicacoes" EntityType="BD_PGP_WEB_DESENVModel.TedsAplicacoes" />
+          <EntitySet Name="TedsContatos" EntityType="BD_PGP_WEB_DESENVModel.TedsContatos" />
+          <EntitySet Name="TedsMotivoOutrasInst" EntityType="BD_PGP_WEB_DESENVModel.TedsMotivoOutrasInst" />
+          <EntitySet Name="TedsMotivos" EntityType="BD_PGP_WEB_DESENVModel.TedsMotivos" />
+          <EntitySet Name="TedsProdutos" EntityType="BD_PGP_WEB_DESENVModel.TedsProdutos" />
+          <AssociationSet Name="FK__TED__MotivoTedId__6166761E" Association="BD_PGP_WEB_DESENVModel.FK__TED__MotivoTedId__6166761E">
+            <End Role="TedsMotivos" EntitySet="TedsMotivos" />
+            <End Role="TED" EntitySet="TED" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TED__OutrasInstI__634EBE90" Association="BD_PGP_WEB_DESENVModel.FK__TED__OutrasInstI__634EBE90">
+            <End Role="TedsMotivoOutrasInst" EntitySet="TedsMotivoOutrasInst" />
+            <End Role="TED" EntitySet="TED" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TedsAplicacoes_TED" Association="BD_PGP_WEB_DESENVModel.FK_TedsAplicacoes_TED">
+            <End Role="TED" EntitySet="TED" />
+            <End Role="TedsAplicacoes" EntitySet="TedsAplicacoes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TedsContatos_TbTED" Association="BD_PGP_WEB_DESENVModel.FK_TedsContatos_TbTED">
+            <End Role="TED" EntitySet="TED" />
+            <End Role="TedsContatos" EntitySet="TedsContatos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TbTedsAplicacoes_TbTedsProdutos" Association="BD_PGP_WEB_DESENVModel.FK_TbTedsAplicacoes_TbTedsProdutos">
+            <End Role="TedsProdutos" EntitySet="TedsProdutos" />
+            <End Role="TedsAplicacoes" EntitySet="TedsAplicacoes" />
+          </AssociationSet>
+          <EntitySet Name="Solicitacao" EntityType="BD_PGP_WEB_DESENVModel.Solicitacao" />
+          <AssociationSet Name="FK_Solicitacao_Motivo" Association="BD_PGP_WEB_DESENVModel.FK_Solicitacao_Motivo">
+            <End Role="Motivo" EntitySet="Motivo" />
+            <End Role="Solicitacao" EntitySet="Solicitacao" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Solicitacao_Status" Association="BD_PGP_WEB_DESENVModel.FK_Solicitacao_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Solicitacao" EntitySet="Solicitacao" />
+          </AssociationSet>
+          <EntitySet Name="Log" EntityType="BD_PGP_WEB_DESENVModel.Log" />
+          <EntitySet Name="vw_NomeCliente" EntityType="BD_PGP_WEB_DESENVModel.vw_NomeCliente" />
+          <EntitySet Name="Clusterizacoes" EntityType="BD_PGP_WEB_DESENVModel.Clusterizacoes" />
+          <EntitySet Name="Encarteiramento" EntityType="BD_PGP_WEB_DESENVModel.Encarteiramento" />
+          <EntitySet Name="Qualitativo" EntityType="BD_PGP_WEB_DESENVModel.Qualitativo" />
+          <EntitySet Name="Investfacil" EntityType="BD_PGP_WEB_DESENVModel.Investfacil" />
+          <EntitySet Name="InvestFacilResumo" EntityType="BD_PGP_WEB_DESENVModel.InvestFacilResumo" />
+          <EntitySet Name="CaminhoDinheiro" EntityType="BD_PGP_WEB_DESENVModel.CaminhoDinheiro" />
+          <EntitySet Name="CaptacaoLiquida" EntityType="BD_PGP_WEB_DESENVModel.CaptacaoLiquida" />
+        </EntityContainer>
+        <EntityType Name="TEDFaixaEquipe">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Equipe" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="De" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Ate" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TedsAplicacoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="IdTed" Type="Int32" Nullable="false" />
+          <Property Name="IdProduto" Type="Int32" Nullable="false" />
+          <Property Name="ValorAplicado" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="TED" Relationship="BD_PGP_WEB_DESENVModel.FK_TedsAplicacoes_TED" FromRole="TedsAplicacoes" ToRole="TED" />
+          <NavigationProperty Name="TedsProdutos" Relationship="BD_PGP_WEB_DESENVModel.FK_TbTedsAplicacoes_TbTedsProdutos" FromRole="TedsAplicacoes" ToRole="TedsProdutos" />
+        </EntityType>
+        <EntityType Name="TedsContatos">
+          <Key>
+            <PropertyRef Name="IdTed" />
+          </Key>
+          <Property Name="IdTed" Type="Int32" Nullable="false" />
+          <Property Name="ContatouCliente" Type="Boolean" />
+          <Property Name="ContatouGerente" Type="Boolean" />
+          <Property Name="GerenteSolicitouNaoAtuacao" Type="Boolean" />
+          <Property Name="GerenteInvestimentoAtuou" Type="Boolean" />
+          <Property Name="EspecialistaAtuou" Type="Boolean" />
+          <Property Name="ClienteLocalizado" Type="Boolean" />
+          <Property Name="ClienteAceitaConsultoria" Type="Boolean" />
+          <NavigationProperty Name="TED" Relationship="BD_PGP_WEB_DESENVModel.FK_TedsContatos_TbTED" FromRole="TedsContatos" ToRole="TED" />
+        </EntityType>
+        <EntityType Name="TedsMotivoOutrasInst">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Motivo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TED" Relationship="BD_PGP_WEB_DESENVModel.FK__TED__OutrasInstI__634EBE90" FromRole="TedsMotivoOutrasInst" ToRole="TED" />
+        </EntityType>
+        <EntityType Name="TedsMotivos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Motivo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TED" Relationship="BD_PGP_WEB_DESENVModel.FK__TED__MotivoTedId__6166761E" FromRole="TedsMotivos" ToRole="TED" />
+        </EntityType>
+        <EntityType Name="TedsProdutos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Produto" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TedsAplicacoes" Relationship="BD_PGP_WEB_DESENVModel.FK_TbTedsAplicacoes_TbTedsProdutos" FromRole="TedsProdutos" ToRole="TedsAplicacoes" />
+        </EntityType>
+        <Association Name="FK__TED__MotivoTedId__6166761E">
+          <End Type="BD_PGP_WEB_DESENVModel.TedsMotivos" Role="TedsMotivos" Multiplicity="0..1" />
+          <End Type="BD_PGP_WEB_DESENVModel.TED" Role="TED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TedsMotivos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TED">
+              <PropertyRef Name="MotivoTedId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TED__OutrasInstI__634EBE90">
+          <End Type="BD_PGP_WEB_DESENVModel.TedsMotivoOutrasInst" Role="TedsMotivoOutrasInst" Multiplicity="0..1" />
+          <End Type="BD_PGP_WEB_DESENVModel.TED" Role="TED" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TedsMotivoOutrasInst">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TED">
+              <PropertyRef Name="OutrasInstId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TedsAplicacoes_TED">
+          <End Type="BD_PGP_WEB_DESENVModel.TED" Role="TED" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="BD_PGP_WEB_DESENVModel.TedsAplicacoes" Role="TedsAplicacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TED">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TedsAplicacoes">
+              <PropertyRef Name="IdTed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TedsContatos_TbTED">
+          <End Type="BD_PGP_WEB_DESENVModel.TED" Role="TED" Multiplicity="1" />
+          <End Type="BD_PGP_WEB_DESENVModel.TedsContatos" Role="TedsContatos" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="TED">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TedsContatos">
+              <PropertyRef Name="IdTed" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TbTedsAplicacoes_TbTedsProdutos">
+          <End Type="BD_PGP_WEB_DESENVModel.TedsProdutos" Role="TedsProdutos" Multiplicity="1" />
+          <End Type="BD_PGP_WEB_DESENVModel.TedsAplicacoes" Role="TedsAplicacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TedsProdutos">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TedsAplicacoes">
+              <PropertyRef Name="IdProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Solicitacao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Segmento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Lideranca" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConsultorMatriz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ConsultorPGP" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NomeParticipante" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CPF" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="false" />
+          <Property Name="SaldoPrevidencia" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ValorPrevistoSaida" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="NomeEntidade" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="DataInicioProcesso" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PrazoAtendimento" Type="DateTime" Precision="3" />
+          <Property Name="DataRef" Type="DateTime" Precision="3" />
+          <Property Name="CodIdentificadorProcesso" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodIdentificadorProposta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SUSEPCedente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SUSEPCessionaria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CIDTFDCNPJCedente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CIDTFDCNPJCessionaria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <Property Name="MotivoId" Type="Int32" />
+          <Property Name="SubMotivoId" Type="Int32" />
+          <Property Name="MatriculaConsultor" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="ValorRetido" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Observacao" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="Agencia" Type="Int32" />
+          <Property Name="Conta" Type="Int32" />
+          <Property Name="DataConclusao" Type="DateTime" Precision="3" />
+          <Property Name="DataInclusao" Type="DateTime" Precision="3" />
+          <Property Name="SubStatusId" Type="Int32" />
+          <Property Name="PrazoFinal" Type="DateTime" Precision="3" />
+          <Property Name="ContatoAgencia" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DescricaoTipoSolicitacao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CodigoIdentificadorAgenciaBRA" Type="Int32" />
+          <NavigationProperty Name="Motivo" Relationship="BD_PGP_WEB_DESENVModel.FK_Solicitacao_Motivo" FromRole="Solicitacao" ToRole="Motivo" />
+          <NavigationProperty Name="Status" Relationship="BD_PGP_WEB_DESENVModel.FK_Solicitacao_Status" FromRole="Solicitacao" ToRole="Status" />
+        </EntityType>
+        <Association Name="FK_Solicitacao_Motivo">
+          <End Type="BD_PGP_WEB_DESENVModel.Motivo" Role="Motivo" Multiplicity="0..1" />
+          <End Type="BD_PGP_WEB_DESENVModel.Solicitacao" Role="Solicitacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motivo">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Solicitacao">
+              <PropertyRef Name="MotivoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Solicitacao_Status">
+          <End Type="BD_PGP_WEB_DESENVModel.Status" Role="Status" Multiplicity="1" />
+          <End Type="BD_PGP_WEB_DESENVModel.Solicitacao" Role="Solicitacao" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Solicitacao">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Log">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Thread" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Level" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Logger" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Exception" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="vw_NomeCliente">
+          <Key>
+            <PropertyRef Name="Agencia" />
+            <PropertyRef Name="Conta" />
+            <PropertyRef Name="NomeCliente" />
+          </Key>
+          <Property Name="Agencia" Type="Int32" Nullable="false" />
+          <Property Name="Conta" Type="Int32" Nullable="false" />
+          <Property Name="NomeCliente" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Clusterizacoes">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CONTA" Type="Int32" Nullable="false" />
+          <Property Name="AGENCIA" Type="Int32" Nullable="false" />
+          <Property Name="CPF_CNPJ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PERFIL_API" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MES_VCTO_API" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NIVEL_DESENQ_FX_RISCO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SALDO_TOTAL_M3" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_TOTAL" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_CORRETORA_BRA" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_CORRETORA_AGORA" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_CORRETORA" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_PREVIDENCIA" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_POUPANCA" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_INVESTS" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_DAV_20K" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_COMPROMISSADAS" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_ISENTOS" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_LF" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_CDB" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="SALDO_FUNDOS" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="COD_GER_RELC" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="GER_RELC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Situacao" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DiretoriaRegional" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodDiretoriaRegional" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Segmento" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AREA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ACAO" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ACAO_PRINCIPAL" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Encarteiramento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TIP_CLIENTE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CPF" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="DATA" Type="DateTime" Precision="7" />
+          <Property Name="Agencia" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Conta" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="AG_PRINC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CONTA_PRINC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CONSULTOR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Matricula" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EQUIPE_RESPONSAVEL" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="EQUIPE_MESA" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="DIR_REG_AG_PRINC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="GER_REG_AG_PRINC" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="COD_REG" Type="Int32" />
+          <Property Name="COD_DIR" Type="Int32" />
+          <Property Name="AREA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Qualitativo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NomeConsultor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OBJETIVOTOTAL" Type="Int32" Nullable="false" />
+          <Property Name="DENTRODACARTEIRA" Type="Int32" Nullable="false" />
+          <Property Name="FORADACARTEIRA" Type="Int32" Nullable="false" />
+          <Property Name="TOTALCONTATOS" Type="Int32" Nullable="false" />
+          <Property Name="PORCENTAGEMATINGIMENTO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="GIRODECARTEIRAOBJETIVO" Type="Int32" Nullable="false" />
+          <Property Name="GIRODECARTEIRAOREALIZADO" Type="Int32" Nullable="false" />
+          <Property Name="PORCENTAGEMATINGIMENTOGIRO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="REVISAOFINANCEIRAOBJETIVO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="REVISAOFINANCEIRAREALIZADO" Type="Int32" Nullable="false" />
+          <Property Name="PORCENTAGEMATINGIMENTOREVISAO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CADASTROAPIOBJETIVO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CADASTROAPIREALIZADO" Type="Double" Nullable="false" />
+          <Property Name="PORCENTAGEMATINGIMENTOCADASTROAPI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MatriculaConsultor" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Investfacil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AGENCIA" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Vlr_Evento" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="CONTA" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="SEGMENTO_CLIENTE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="NUM_CONTRATO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MES_DT_BASE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DT_EMISSAO" Type="DateTime" Precision="3" />
+          <Property Name="PRAZO_PERMAN" Type="Int32" />
+          <Property Name="FX_PERMANENCIA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FX_VOLUME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SEGM_AGRUPADO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SEGMENTO_MACRO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MatriculaConsultor" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="NomeConsultor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MatriculaCordenador" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="NomeCordenador" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Plataforma" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="InvestFacilResumo">
+          <Key>
+            <PropertyRef Name="Matricula" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Matricula" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MatriculaCordenador" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="Vlr_Evento" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="CaminhoDinheiro">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MesDataBase" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Ag_Conta" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Agencia" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Segmento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Produto" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VL_APLIC" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="VL_RESG" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PERC_DINHEIRO_NOVO" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PERC_CDB" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PERC_ISENTOS" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PERC_COMPROMISSADAS" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PERC_LF" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PERC_FUNDOS" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PERC_CORRET" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PERC_PREVI" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PERC_MSM_TIT_ENV_TOTAL" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PERC_DIF_TIT_ENV_TOTAL" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="PERC_OUTROS" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="MatriculaConsultor" Type="String" Nullable="false" MaxLength="7" FixedLength="false" Unicode="false" />
+          <Property Name="Consultor" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MatriculaCordenador" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="Cordenador" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CaptacaoLiquida">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Agencia" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Conta" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Ag_Conta" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CodAgencia" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MesDataBase" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Diretoria" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="TipoPessoa" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="GerenciaRegional" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MatriculaCordenador" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="CordenadorPGP" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="MatriculaConsultor" Type="String" Nullable="false" MaxLength="7" FixedLength="true" Unicode="false" />
+          <Property Name="Consultor" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="DataBase" Type="DateTime" Precision="3" />
+          <Property Name="Produto" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ValorAplicacao" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ValorResgate" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ValorNET" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BD_PGP_WEB_DESENVModelStoreContainer" CdmEntityContainer="PGPEntities">
+          <EntitySetMapping Name="Aniversarios">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Aniversarios">
+              <MappingFragment StoreEntitySet="Aniversarios">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Conta" ColumnName="Conta" />
+                <ScalarProperty Name="DataNascimento" ColumnName="DataNascimento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AplicacaoResgate">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.AplicacaoResgate">
+              <MappingFragment StoreEntitySet="AplicacaoResgate">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="agencia" ColumnName="agencia" />
+                <ScalarProperty Name="conta" ColumnName="conta" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="hora" ColumnName="hora" />
+                <ScalarProperty Name="operacao" ColumnName="operacao" />
+                <ScalarProperty Name="perif" ColumnName="perif" />
+                <ScalarProperty Name="produto" ColumnName="produto" />
+                <ScalarProperty Name="terminal" ColumnName="terminal" />
+                <ScalarProperty Name="valor" ColumnName="valor" />
+                <ScalarProperty Name="gerente" ColumnName="gerente" />
+                <ScalarProperty Name="advisor" ColumnName="advisor" />
+                <ScalarProperty Name="segmento" ColumnName="segmento" />
+                <ScalarProperty Name="enviado" ColumnName="enviado" />
+                <ScalarProperty Name="MatriculaConsultor" ColumnName="MatriculaConsultor" />
+                <ScalarProperty Name="Notificado" ColumnName="Notificado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CaptacaoLiquidaResumo">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.CaptacaoLiquidaResumo">
+              <MappingFragment StoreEntitySet="CaptacaoLiquidaResumo">
+                <ScalarProperty Name="MatriculaCordenador" ColumnName="MatriculaCordenador" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="MatriculaConsultor" ColumnName="MatriculaConsultor" />
+                <ScalarProperty Name="ProdutoMacro" ColumnName="ProdutoMacro" />
+                <ScalarProperty Name="VL_NET" ColumnName="VL_NET" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cockpit">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Cockpit">
+              <MappingFragment StoreEntitySet="Cockpit">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodFuncionalGerente" ColumnName="CodFuncionalGerente" />
+                <ScalarProperty Name="NomeGerente" ColumnName="NomeGerente" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="NomeCliente" ColumnName="NomeCliente" />
+                <ScalarProperty Name="CodigoAgencia" ColumnName="CodigoAgencia" />
+                <ScalarProperty Name="NomeAgencia" ColumnName="NomeAgencia" />
+                <ScalarProperty Name="Conta" ColumnName="Conta" />
+                <ScalarProperty Name="DataEncarteiramento" ColumnName="DataEncarteiramento" />
+                <ScalarProperty Name="DataContato" ColumnName="DataContato" />
+                <ScalarProperty Name="DataRetorno" ColumnName="DataRetorno" />
+                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+                <ScalarProperty Name="ContatoTeveExito" ColumnName="ContatoTeveExito" />
+                <ScalarProperty Name="DataHoraEdicaoContato" ColumnName="DataHoraEdicaoContato" />
+                <ScalarProperty Name="MeioContato" ColumnName="MeioContato" />
+                <ScalarProperty Name="ClienteNaoLocalizado" ColumnName="ClienteNaoLocalizado" />
+                <ScalarProperty Name="TipoTransacao" ColumnName="TipoTransacao" />
+                <ScalarProperty Name="Finalizado" ColumnName="Finalizado" />
+                <ScalarProperty Name="GerenteRegistrouContato" ColumnName="GerenteRegistrouContato" />
+                <ScalarProperty Name="MatriculaConsultor" ColumnName="MatriculaConsultor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Corretora">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Corretora">
+              <MappingFragment StoreEntitySet="Corretora">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Conta" ColumnName="Conta" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Evento">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Evento">
+              <MappingFragment StoreEntitySet="Evento">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="DataHoraInicio" ColumnName="DataHoraInicio" />
+                <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+                <ScalarProperty Name="MatriculaConsultor" ColumnName="MatriculaConsultor" />
+                <ScalarProperty Name="Finalizado" ColumnName="Finalizado" />
+                <ScalarProperty Name="Notificado" ColumnName="Notificado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Links">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Links">
+              <MappingFragment StoreEntitySet="Links">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+                <ScalarProperty Name="Url" ColumnName="Url" />
+                <ScalarProperty Name="Exibir" ColumnName="Exibir" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Motivo">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Motivo">
+              <MappingFragment StoreEntitySet="Motivo">
+                <ScalarProperty Name="EmUso" ColumnName="EmUso" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Evento" ColumnName="Evento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Origem">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Origem">
+              <MappingFragment StoreEntitySet="Origem">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Evento" ColumnName="Evento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfil">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Perfil">
+              <MappingFragment StoreEntitySet="Perfil">
+                <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pipeline">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Pipeline">
+              <MappingFragment StoreEntitySet="Pipeline">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NomeCliente" ColumnName="NomeCliente" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Consultor" ColumnName="Consultor" />
+                <ScalarProperty Name="Conta" ColumnName="Conta" />
+                <ScalarProperty Name="BradescoPrincipalBanco" ColumnName="BradescoPrincipalBanco" />
+                <ScalarProperty Name="ValoresNoMercado" ColumnName="ValoresNoMercado" />
+                <ScalarProperty Name="ValorDoPipe" ColumnName="ValorDoPipe" />
+                <ScalarProperty Name="OrigemId" ColumnName="OrigemId" />
+                <ScalarProperty Name="DataPrevista" ColumnName="DataPrevista" />
+                <ScalarProperty Name="DataDaConversao" ColumnName="DataDaConversao" />
+                <ScalarProperty Name="DataProrrogada" ColumnName="DataProrrogada" />
+                <ScalarProperty Name="MotivoId" ColumnName="MotivoId" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="Observacoes" ColumnName="Observacoes" />
+                <ScalarProperty Name="ValorAplicado" ColumnName="ValorAplicado" />
+                <ScalarProperty Name="MatriculaConsultor" ColumnName="MatriculaConsultor" />
+                <ScalarProperty Name="Notificado" ColumnName="Notificado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Evento" ColumnName="Evento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TED">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.TED">
+              <MappingFragment StoreEntitySet="TED">
+                <ScalarProperty Name="CpfCnpj" ColumnName="CpfCnpj" />
+                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+                <ScalarProperty Name="OutrasInstId" ColumnName="OutrasInstId" />
+                <ScalarProperty Name="MotivoTedId" ColumnName="MotivoTedId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Conta" ColumnName="Conta" />
+                <ScalarProperty Name="NomeCliente" ColumnName="NomeCliente" />
+                <ScalarProperty Name="MatriculaConsultor" ColumnName="MatriculaConsultor" />
+                <ScalarProperty Name="NomeConsultor" ColumnName="NomeConsultor" />
+                <ScalarProperty Name="MatriculaSupervisor" ColumnName="MatriculaSupervisor" />
+                <ScalarProperty Name="NomeSupervisor" ColumnName="NomeSupervisor" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+                <ScalarProperty Name="ValorAplicado" ColumnName="ValorAplicado" />
+                <ScalarProperty Name="MotivoId" ColumnName="MotivoId" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="Notificado" ColumnName="Notificado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="NomeSupervisor" ColumnName="NomeSupervisor" />
+                <ScalarProperty Name="MatriculaSupervisor" ColumnName="MatriculaSupervisor" />
+                <ScalarProperty Name="Equipe" ColumnName="Equipe" />
+                <ScalarProperty Name="PerfilId" ColumnName="PerfilId" />
+                <ScalarProperty Name="NomeUsuario" ColumnName="NomeUsuario" />
+                <ScalarProperty Name="UsuarioId" ColumnName="UsuarioId" />
+                <ScalarProperty Name="NotificacaoEvento" ColumnName="NotificacaoEvento" />
+                <ScalarProperty Name="NotificacaoPipeline" ColumnName="NotificacaoPipeline" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vencimento">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Vencimento">
+              <MappingFragment StoreEntitySet="Vencimento">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Cod_Agencia" ColumnName="Cod_Agencia" />
+                <ScalarProperty Name="Cod_Conta_Corrente" ColumnName="Cod_Conta_Corrente" />
+                <ScalarProperty Name="Dt_Vecto_Contratado" ColumnName="Dt_Vecto_Contratado" />
+                <ScalarProperty Name="Nm_Cliente_Contraparte" ColumnName="Nm_Cliente_Contraparte" />
+                <ScalarProperty Name="Perc_Indexador" ColumnName="Perc_Indexador" />
+                <ScalarProperty Name="Nome_produto_sistema_origem" ColumnName="Nome_produto_sistema_origem" />
+                <ScalarProperty Name="SALDO_ATUAL" ColumnName="SALDO_ATUAL" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WindowsServiceConfig">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.WindowsServiceConfig">
+              <MappingFragment StoreEntitySet="WindowsServiceConfig">
+                <ScalarProperty Name="TeveFalha" ColumnName="TeveFalha" />
+                <ScalarProperty Name="NomeArquivo" ColumnName="NomeArquivo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Tarefa" ColumnName="Tarefa" />
+                <ScalarProperty Name="CaminhoOrigem" ColumnName="CaminhoOrigem" />
+                <ScalarProperty Name="UltimaExecucao" ColumnName="UltimaExecucao" />
+                <ScalarProperty Name="IntervaloExecucao" ColumnName="IntervaloExecucao" />
+                <ScalarProperty Name="DataUltimaModificacao" ColumnName="DataUltimaModificacao" />
+                <ScalarProperty Name="PadraoPesquisa" ColumnName="PadraoPesquisa" />
+                <ScalarProperty Name="Acrescentar" ColumnName="Acrescentar" />
+                <ScalarProperty Name="UltimoArquivo" ColumnName="UltimoArquivo" />
+                <ScalarProperty Name="EmExecucao" ColumnName="EmExecucao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TemInvestFacil">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.TemInvestFacil">
+              <MappingFragment StoreEntitySet="TemInvestFacil">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Conta" ColumnName="Conta" />
+                <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+                <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TEDFaixaEquipe">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.TEDFaixaEquipe">
+              <MappingFragment StoreEntitySet="TEDFaixaEquipe">
+                <ScalarProperty Name="Ate" ColumnName="Ate" />
+                <ScalarProperty Name="De" ColumnName="De" />
+                <ScalarProperty Name="Equipe" ColumnName="Equipe" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TedsAplicacoes">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.TedsAplicacoes">
+              <MappingFragment StoreEntitySet="TedsAplicacoes">
+                <ScalarProperty Name="ValorAplicado" ColumnName="ValorAplicado" />
+                <ScalarProperty Name="IdProduto" ColumnName="IdProduto" />
+                <ScalarProperty Name="IdTed" ColumnName="IdTed" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TedsContatos">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.TedsContatos">
+              <MappingFragment StoreEntitySet="TedsContatos">
+                <ScalarProperty Name="ClienteAceitaConsultoria" ColumnName="ClienteAceitaConsultoria" />
+                <ScalarProperty Name="ClienteLocalizado" ColumnName="ClienteLocalizado" />
+                <ScalarProperty Name="EspecialistaAtuou" ColumnName="EspecialistaAtuou" />
+                <ScalarProperty Name="GerenteInvestimentoAtuou" ColumnName="GerenteInvestimentoAtuou" />
+                <ScalarProperty Name="GerenteSolicitouNaoAtuacao" ColumnName="GerenteSolicitouNaoAtuacao" />
+                <ScalarProperty Name="ContatouGerente" ColumnName="ContatouGerente" />
+                <ScalarProperty Name="ContatouCliente" ColumnName="ContatouCliente" />
+                <ScalarProperty Name="IdTed" ColumnName="IdTed" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TedsMotivoOutrasInst">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.TedsMotivoOutrasInst">
+              <MappingFragment StoreEntitySet="TedsMotivoOutrasInst">
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TedsMotivos">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.TedsMotivos">
+              <MappingFragment StoreEntitySet="TedsMotivos">
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TedsProdutos">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.TedsProdutos">
+              <MappingFragment StoreEntitySet="TedsProdutos">
+                <ScalarProperty Name="Produto" ColumnName="Produto" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Solicitacao">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Solicitacao">
+              <MappingFragment StoreEntitySet="Solicitacao">
+                <ScalarProperty Name="CodigoIdentificadorAgenciaBRA" ColumnName="CodigoIdentificadorAgenciaBRA" />
+                <ScalarProperty Name="DescricaoTipoSolicitacao" ColumnName="DescricaoTipoSolicitacao" />
+                <ScalarProperty Name="ContatoAgencia" ColumnName="ContatoAgencia" />
+                <ScalarProperty Name="PrazoFinal" ColumnName="PrazoFinal" />
+                <ScalarProperty Name="SubStatusId" ColumnName="SubStatusId" />
+                <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+                <ScalarProperty Name="DataConclusao" ColumnName="DataConclusao" />
+                <ScalarProperty Name="Conta" ColumnName="Conta" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+                <ScalarProperty Name="ValorRetido" ColumnName="ValorRetido" />
+                <ScalarProperty Name="MatriculaConsultor" ColumnName="MatriculaConsultor" />
+                <ScalarProperty Name="SubMotivoId" ColumnName="SubMotivoId" />
+                <ScalarProperty Name="MotivoId" ColumnName="MotivoId" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="CIDTFDCNPJCessionaria" ColumnName="CIDTFDCNPJCessionaria" />
+                <ScalarProperty Name="CIDTFDCNPJCedente" ColumnName="CIDTFDCNPJCedente" />
+                <ScalarProperty Name="SUSEPCessionaria" ColumnName="SUSEPCessionaria" />
+                <ScalarProperty Name="SUSEPCedente" ColumnName="SUSEPCedente" />
+                <ScalarProperty Name="CodIdentificadorProposta" ColumnName="CodIdentificadorProposta" />
+                <ScalarProperty Name="CodIdentificadorProcesso" ColumnName="CodIdentificadorProcesso" />
+                <ScalarProperty Name="DataRef" ColumnName="DataRef" />
+                <ScalarProperty Name="PrazoAtendimento" ColumnName="PrazoAtendimento" />
+                <ScalarProperty Name="DataInicioProcesso" ColumnName="DataInicioProcesso" />
+                <ScalarProperty Name="NomeEntidade" ColumnName="NomeEntidade" />
+                <ScalarProperty Name="ValorPrevistoSaida" ColumnName="ValorPrevistoSaida" />
+                <ScalarProperty Name="SaldoPrevidencia" ColumnName="SaldoPrevidencia" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="NomeParticipante" ColumnName="NomeParticipante" />
+                <ScalarProperty Name="ConsultorPGP" ColumnName="ConsultorPGP" />
+                <ScalarProperty Name="ConsultorMatriz" ColumnName="ConsultorMatriz" />
+                <ScalarProperty Name="Lideranca" ColumnName="Lideranca" />
+                <ScalarProperty Name="Segmento" ColumnName="Segmento" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Log">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Log">
+              <MappingFragment StoreEntitySet="Log">
+                <ScalarProperty Name="Exception" ColumnName="Exception" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Logger" ColumnName="Logger" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Thread" ColumnName="Thread" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vw_NomeCliente">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.vw_NomeCliente">
+              <MappingFragment StoreEntitySet="vw_NomeCliente">
+                <ScalarProperty Name="NomeCliente" ColumnName="NomeCliente" />
+                <ScalarProperty Name="Conta" ColumnName="Conta" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Clusterizacoes">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Clusterizacoes">
+              <MappingFragment StoreEntitySet="Clusterizacoes">
+                <ScalarProperty Name="ACAO_PRINCIPAL" ColumnName="ACAO_PRINCIPAL" />
+                <ScalarProperty Name="ACAO" ColumnName="ACAO" />
+                <ScalarProperty Name="AREA" ColumnName="AREA" />
+                <ScalarProperty Name="Segmento" ColumnName="Segmento" />
+                <ScalarProperty Name="CodDiretoriaRegional" ColumnName="CodDiretoriaRegional" />
+                <ScalarProperty Name="DiretoriaRegional" ColumnName="DiretoriaRegional" />
+                <ScalarProperty Name="Situacao" ColumnName="Situacao" />
+                <ScalarProperty Name="GER_RELC" ColumnName="GER_RELC" />
+                <ScalarProperty Name="COD_GER_RELC" ColumnName="COD_GER_RELC" />
+                <ScalarProperty Name="SALDO_FUNDOS" ColumnName="SALDO_FUNDOS" />
+                <ScalarProperty Name="SALDO_CDB" ColumnName="SALDO_CDB" />
+                <ScalarProperty Name="SALDO_LF" ColumnName="SALDO_LF" />
+                <ScalarProperty Name="SALDO_ISENTOS" ColumnName="SALDO_ISENTOS" />
+                <ScalarProperty Name="SALDO_COMPROMISSADAS" ColumnName="SALDO_COMPROMISSADAS" />
+                <ScalarProperty Name="SALDO_DAV_20K" ColumnName="SALDO_DAV_20K" />
+                <ScalarProperty Name="SALDO_INVESTS" ColumnName="SALDO_INVESTS" />
+                <ScalarProperty Name="SALDO_POUPANCA" ColumnName="SALDO_POUPANCA" />
+                <ScalarProperty Name="SALDO_PREVIDENCIA" ColumnName="SALDO_PREVIDENCIA" />
+                <ScalarProperty Name="SALDO_CORRETORA" ColumnName="SALDO_CORRETORA" />
+                <ScalarProperty Name="SALDO_CORRETORA_AGORA" ColumnName="SALDO_CORRETORA_AGORA" />
+                <ScalarProperty Name="SALDO_CORRETORA_BRA" ColumnName="SALDO_CORRETORA_BRA" />
+                <ScalarProperty Name="SALDO_TOTAL" ColumnName="SALDO_TOTAL" />
+                <ScalarProperty Name="SALDO_TOTAL_M3" ColumnName="SALDO_TOTAL_M3" />
+                <ScalarProperty Name="NIVEL_DESENQ_FX_RISCO" ColumnName="NIVEL_DESENQ_FX_RISCO" />
+                <ScalarProperty Name="MES_VCTO_API" ColumnName="MES_VCTO_API" />
+                <ScalarProperty Name="PERFIL_API" ColumnName="PERFIL_API" />
+                <ScalarProperty Name="CPF_CNPJ" ColumnName="CPF_CNPJ" />
+                <ScalarProperty Name="AGENCIA" ColumnName="AGENCIA" />
+                <ScalarProperty Name="CONTA" ColumnName="CONTA" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Encarteiramento">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Encarteiramento">
+              <MappingFragment StoreEntitySet="Encarteiramento">
+                <ScalarProperty Name="AREA" ColumnName="AREA" />
+                <ScalarProperty Name="COD_DIR" ColumnName="COD_DIR" />
+                <ScalarProperty Name="COD_REG" ColumnName="COD_REG" />
+                <ScalarProperty Name="GER_REG_AG_PRINC" ColumnName="GER_REG_AG_PRINC" />
+                <ScalarProperty Name="DIR_REG_AG_PRINC" ColumnName="DIR_REG_AG_PRINC" />
+                <ScalarProperty Name="EQUIPE_MESA" ColumnName="EQUIPE_MESA" />
+                <ScalarProperty Name="EQUIPE_RESPONSAVEL" ColumnName="EQUIPE_RESPONSAVEL" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="CONSULTOR" ColumnName="CONSULTOR" />
+                <ScalarProperty Name="CONTA_PRINC" ColumnName="CONTA_PRINC" />
+                <ScalarProperty Name="AG_PRINC" ColumnName="AG_PRINC" />
+                <ScalarProperty Name="Conta" ColumnName="Conta" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="DATA" ColumnName="DATA" />
+                <ScalarProperty Name="CPF" ColumnName="CPF" />
+                <ScalarProperty Name="TIP_CLIENTE" ColumnName="TIP_CLIENTE" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Qualitativo">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Qualitativo">
+              <MappingFragment StoreEntitySet="Qualitativo">
+                <ScalarProperty Name="MatriculaConsultor" ColumnName="MatriculaConsultor" />
+                <ScalarProperty Name="PORCENTAGEMATINGIMENTOCADASTROAPI" ColumnName="PORCENTAGEMATINGIMENTOCADASTROAPI" />
+                <ScalarProperty Name="CADASTROAPIREALIZADO" ColumnName="CADASTROAPIREALIZADO" />
+                <ScalarProperty Name="CADASTROAPIOBJETIVO" ColumnName="CADASTROAPIOBJETIVO" />
+                <ScalarProperty Name="PORCENTAGEMATINGIMENTOREVISAO" ColumnName="PORCENTAGEMATINGIMENTOREVISAO" />
+                <ScalarProperty Name="REVISAOFINANCEIRAREALIZADO" ColumnName="REVISAOFINANCEIRAREALIZADO" />
+                <ScalarProperty Name="REVISAOFINANCEIRAOBJETIVO" ColumnName="REVISAOFINANCEIRAOBJETIVO" />
+                <ScalarProperty Name="PORCENTAGEMATINGIMENTOGIRO" ColumnName="PORCENTAGEMATINGIMENTOGIRO" />
+                <ScalarProperty Name="GIRODECARTEIRAOREALIZADO" ColumnName="GIRODECARTEIRAOREALIZADO" />
+                <ScalarProperty Name="GIRODECARTEIRAOBJETIVO" ColumnName="GIRODECARTEIRAOBJETIVO" />
+                <ScalarProperty Name="PORCENTAGEMATINGIMENTO" ColumnName="PORCENTAGEMATINGIMENTO" />
+                <ScalarProperty Name="TOTALCONTATOS" ColumnName="TOTALCONTATOS" />
+                <ScalarProperty Name="FORADACARTEIRA" ColumnName="FORADACARTEIRA" />
+                <ScalarProperty Name="DENTRODACARTEIRA" ColumnName="DENTRODACARTEIRA" />
+                <ScalarProperty Name="OBJETIVOTOTAL" ColumnName="OBJETIVOTOTAL" />
+                <ScalarProperty Name="NomeConsultor" ColumnName="NomeConsultor" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Investfacil">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.Investfacil">
+              <MappingFragment StoreEntitySet="Investfacil">
+                <ScalarProperty Name="Plataforma" ColumnName="Plataforma" />
+                <ScalarProperty Name="NomeCordenador" ColumnName="NomeCordenador" />
+                <ScalarProperty Name="MatriculaCordenador" ColumnName="MatriculaCordenador" />
+                <ScalarProperty Name="NomeConsultor" ColumnName="NomeConsultor" />
+                <ScalarProperty Name="MatriculaConsultor" ColumnName="MatriculaConsultor" />
+                <ScalarProperty Name="SEGMENTO_MACRO" ColumnName="SEGMENTO_MACRO" />
+                <ScalarProperty Name="SEGM_AGRUPADO" ColumnName="SEGM_AGRUPADO" />
+                <ScalarProperty Name="FX_VOLUME" ColumnName="FX_VOLUME" />
+                <ScalarProperty Name="FX_PERMANENCIA" ColumnName="FX_PERMANENCIA" />
+                <ScalarProperty Name="PRAZO_PERMAN" ColumnName="PRAZO_PERMAN" />
+                <ScalarProperty Name="DT_EMISSAO" ColumnName="DT_EMISSAO" />
+                <ScalarProperty Name="MES_DT_BASE" ColumnName="MES_DT_BASE" />
+                <ScalarProperty Name="NUM_CONTRATO" ColumnName="NUM_CONTRATO" />
+                <ScalarProperty Name="SEGMENTO_CLIENTE" ColumnName="SEGMENTO_CLIENTE" />
+                <ScalarProperty Name="CONTA" ColumnName="CONTA" />
+                <ScalarProperty Name="Vlr_Evento" ColumnName="Vlr_Evento" />
+                <ScalarProperty Name="AGENCIA" ColumnName="AGENCIA" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvestFacilResumo">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.InvestFacilResumo">
+              <MappingFragment StoreEntitySet="InvestFacilResumo">
+                <ScalarProperty Name="Vlr_Evento" ColumnName="Vlr_Evento" />
+                <ScalarProperty Name="MatriculaCordenador" ColumnName="MatriculaCordenador" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CaminhoDinheiro">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.CaminhoDinheiro">
+              <MappingFragment StoreEntitySet="CaminhoDinheiro">
+                <ScalarProperty Name="Cordenador" ColumnName="Cordenador" />
+                <ScalarProperty Name="MatriculaCordenador" ColumnName="MatriculaCordenador" />
+                <ScalarProperty Name="Consultor" ColumnName="Consultor" />
+                <ScalarProperty Name="MatriculaConsultor" ColumnName="MatriculaConsultor" />
+                <ScalarProperty Name="PERC_OUTROS" ColumnName="PERC_OUTROS" />
+                <ScalarProperty Name="PERC_DIF_TIT_ENV_TOTAL" ColumnName="PERC_DIF_TIT_ENV_TOTAL" />
+                <ScalarProperty Name="PERC_MSM_TIT_ENV_TOTAL" ColumnName="PERC_MSM_TIT_ENV_TOTAL" />
+                <ScalarProperty Name="PERC_PREVI" ColumnName="PERC_PREVI" />
+                <ScalarProperty Name="PERC_CORRET" ColumnName="PERC_CORRET" />
+                <ScalarProperty Name="PERC_FUNDOS" ColumnName="PERC_FUNDOS" />
+                <ScalarProperty Name="PERC_LF" ColumnName="PERC_LF" />
+                <ScalarProperty Name="PERC_COMPROMISSADAS" ColumnName="PERC_COMPROMISSADAS" />
+                <ScalarProperty Name="PERC_ISENTOS" ColumnName="PERC_ISENTOS" />
+                <ScalarProperty Name="PERC_CDB" ColumnName="PERC_CDB" />
+                <ScalarProperty Name="PERC_DINHEIRO_NOVO" ColumnName="PERC_DINHEIRO_NOVO" />
+                <ScalarProperty Name="VL_RESG" ColumnName="VL_RESG" />
+                <ScalarProperty Name="VL_APLIC" ColumnName="VL_APLIC" />
+                <ScalarProperty Name="Produto" ColumnName="Produto" />
+                <ScalarProperty Name="Segmento" ColumnName="Segmento" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Ag_Conta" ColumnName="Ag_Conta" />
+                <ScalarProperty Name="MesDataBase" ColumnName="MesDataBase" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CaptacaoLiquida">
+            <EntityTypeMapping TypeName="BD_PGP_WEB_DESENVModel.CaptacaoLiquida">
+              <MappingFragment StoreEntitySet="CaptacaoLiquida">
+                <ScalarProperty Name="ValorNET" ColumnName="ValorNET" />
+                <ScalarProperty Name="ValorResgate" ColumnName="ValorResgate" />
+                <ScalarProperty Name="ValorAplicacao" ColumnName="ValorAplicacao" />
+                <ScalarProperty Name="Produto" ColumnName="Produto" />
+                <ScalarProperty Name="DataBase" ColumnName="DataBase" />
+                <ScalarProperty Name="Consultor" ColumnName="Consultor" />
+                <ScalarProperty Name="MatriculaConsultor" ColumnName="MatriculaConsultor" />
+                <ScalarProperty Name="CordenadorPGP" ColumnName="CordenadorPGP" />
+                <ScalarProperty Name="MatriculaCordenador" ColumnName="MatriculaCordenador" />
+                <ScalarProperty Name="GerenciaRegional" ColumnName="GerenciaRegional" />
+                <ScalarProperty Name="TipoPessoa" ColumnName="TipoPessoa" />
+                <ScalarProperty Name="Diretoria" ColumnName="Diretoria" />
+                <ScalarProperty Name="MesDataBase" ColumnName="MesDataBase" />
+                <ScalarProperty Name="CodAgencia" ColumnName="CodAgencia" />
+                <ScalarProperty Name="Ag_Conta" ColumnName="Ag_Conta" />
+                <ScalarProperty Name="Conta" ColumnName="Conta" />
+                <ScalarProperty Name="Agencia" ColumnName="Agencia" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

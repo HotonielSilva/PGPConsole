@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BradescoPGP.Repositorio", "BradescoPGP.Repositorio\BradescoPGP.Repositorio.csproj", "{7312656E-819F-4A3E-A0F9-02079DC8154E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BradescoPGP.Common", "BradecoPGP.Common\BradescoPGP.Common.csproj", "{FD6B37E5-15A0-40DF-86A5-BD91F461A41E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BradescoPGP.Console", "BradescoPGP.Console\BradescoPGP.Console.csproj", "{11BDB763-849D-4FD5-B8F3-7535B874F1AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7312656E-819F-4A3E-A0F9-02079DC8154E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7312656E-819F-4A3E-A0F9-02079DC8154E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7312656E-819F-4A3E-A0F9-02079DC8154E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7312656E-819F-4A3E-A0F9-02079DC8154E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6B37E5-15A0-40DF-86A5-BD91F461A41E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6B37E5-15A0-40DF-86A5-BD91F461A41E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6B37E5-15A0-40DF-86A5-BD91F461A41E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6B37E5-15A0-40DF-86A5-BD91F461A41E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11BDB763-849D-4FD5-B8F3-7535B874F1AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11BDB763-849D-4FD5-B8F3-7535B874F1AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11BDB763-849D-4FD5-B8F3-7535B874F1AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11BDB763-849D-4FD5-B8F3-7535B874F1AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6A6A4B97-1C52-43FF-BF47-2E2B69D11EF9}
+	EndGlobalSection
+EndGlobal

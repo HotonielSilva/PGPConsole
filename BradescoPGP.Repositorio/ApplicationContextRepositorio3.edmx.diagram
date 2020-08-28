@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1d4f08441d9b4f109616ec22032bcb8d" Name="Diagram1" ZoomLevel="92">
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Aniversarios" Width="1.5" PointX="8.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.AplicacaoResgate" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.CaptacaoLiquidaResumo" Width="1.75" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Cockpit" Width="1.5" PointX="2.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Corretora" Width="1.5" PointX="4.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Evento" Width="1.5" PointX="12.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Links" Width="1.5" PointX="12.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Motivo" Width="1.5" PointX="0.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Origem" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Perfil" Width="1.5" PointX="2.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Pipeline" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Status" Width="1.5" PointX="0.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.TED" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Usuario" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Vencimento" Width="1.5" PointX="3" PointY="17.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.WindowsServiceConfig" Width="1.5" PointX="14.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.TemInvestFacil" Width="1.5" PointX="14.75" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK_Pipeline_Motivo" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK_TED_Motivo" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK_Pipeline_Origem" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK__Usuario__PerfilI__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK_Pipeline_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK_TED_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK_Vencimento_Status" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.TEDFaixaEquipe" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.TedsAplicacoes" Width="1.5" PointX="17.25" PointY="8" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.TedsContatos" Width="1.5" PointX="8.25" PointY="17.625" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.TedsMotivoOutrasInst" Width="1.5" PointX="3.75" PointY="24.5" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.TedsMotivos" Width="1.5" PointX="3.75" PointY="22.125" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.TedsProdutos" Width="1.5" PointX="15" PointY="16.25" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK__TED__MotivoTedId__6166761E" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK__TED__OutrasInstI__634EBE90" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK_TedsAplicacoes_TED" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK_TedsContatos_TbTED" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK_TbTedsAplicacoes_TbTedsProdutos" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Solicitacao" Width="1.5" PointX="10.75" PointY="17.25" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK_Solicitacao_Motivo" />
+        <AssociationConnector Association="BD_PGP_WEB_DESENVModel.FK_Solicitacao_Status" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Log" Width="1.5" PointX="17.375" PointY="3.75" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.vw_NomeCliente" Width="1.5" PointX="15.375" PointY="13.75" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Clusterizacoes" Width="1.5" PointX="17.375" PointY="11.75" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Encarteiramento" Width="1.5" PointX="13.375" PointY="18.75" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Qualitativo" Width="1.5" PointX="19.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.Investfacil" Width="1.5" PointX="5.375" PointY="14.75" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.InvestFacilResumo" Width="1.5" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.CaminhoDinheiro" Width="1.5" PointX="19.375" PointY="12.75" />
+        <EntityTypeShape EntityType="BD_PGP_WEB_DESENVModel.CaptacaoLiquida" Width="1.5" PointX="19.375" PointY="6.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
